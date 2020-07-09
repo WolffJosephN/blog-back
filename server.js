@@ -14,6 +14,10 @@ const port = process.env.PORT || 5000;
 console.log("Starting server...")
 app.listen(port, () => { console.log(`Server started on port: ${port}`) });
 
+//Set up routes
+app.use("/", require("./routes/homeRouter"));
+app.use("/posts", require("./routes/postRouter"));
+
 //set up mongoose
 
 console.log("Connecting to MongoDB...")
